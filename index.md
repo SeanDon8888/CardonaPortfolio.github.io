@@ -33,9 +33,13 @@ This is what our final review page should look like.
 
 #Step 2 Setting up Microsoft Sentinel
 
-In our search bar, we type in Mircosoft Sentinel and create our workspace. We click the resource group 
+In our search bar, we type in Mircosoft Sentinel and create our workspace. We click our resource group and name our Log Analytics workspace.
 
+![Branching](creating log analytics .png)
 
+After creating the Log analytics, we click add to connect it in our workplace.
+
+![Branching](adding sentital to our workspace.png)
 
 ## Header 2
 
