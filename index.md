@@ -15,7 +15,8 @@ There should be whitespace between paragraphs. We recommend including a README, 
 We are going to create our SIEM with Microsoft Azure
 
 Step 1
-  
+
+VM creation.png
 
 ## Header 2
 
