@@ -23,6 +23,9 @@ The most important part of our simulation is allowing all RDP ports. We are usin
 
 ![Branching](VM creation 2.png)
 
+Now, we just click through to allow Azure to create the default settings until we reach our networking page. Here, we ensure that we enable port 3389.  
+
+![Bracnhing](vm creation 4.png)
 
 ## Header 2
 
