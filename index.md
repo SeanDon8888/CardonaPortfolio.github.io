@@ -14,7 +14,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 We are going to create our SIEM with Microsoft Azure
 
-Step 1
+#Step 1 Creating our VM 
 
 First, we want to create our Windows 10 pro Virtual Machine.
 ![Branching](VM creation.png)
@@ -30,6 +30,13 @@ Now, we just click through to allow Azure to create the default settings until w
 This is what our final review page should look like.
 
 ![Branching](VM creation final.png)
+
+#Step 2 Setting up Microsoft Sentinel
+
+
+
+
+
 ## Header 2
 
 > This is a blockquote following a header.
