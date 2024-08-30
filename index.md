@@ -15,8 +15,13 @@ There should be whitespace between paragraphs. We recommend including a README, 
 We are going to create our SIEM with Microsoft Azure
 
 Step 1
-
+First, we want to create our Windows 10 pro Virtual Machine.
 ![Branching](VM creation.png)
+
+The most important part of our simulation is allowing all RDP ports. We are using a default username and random password for our credentials. 
+
+![Branching](VM creation 2.png)
+
 
 ## Header 2
 
