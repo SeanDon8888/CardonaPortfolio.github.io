@@ -16,7 +16,7 @@ We are going to create our SIEM with Microsoft Azure
 
 #Step 1 Creating our VM 
 
-First, we want to create our Windows 10 pro Virtual Machine.
+First, we want to create our Windows 10 pro Virtual Machine and name our resource group. (Naming a group now will create one automatically.) 
 ![Branching](VM creation.png)
 
 The most important part of our simulation is allowing all RDP ports. We are using a default username and random password for our credentials. 
@@ -33,7 +33,7 @@ This is what our final review page should look like.
 
 #Step 2 Setting up Microsoft Sentinel
 
-
+In our search bar, we type in Mircosoft Sentinel and create our workspace. We click the resource group 
 
 
 
