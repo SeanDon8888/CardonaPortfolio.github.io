@@ -49,6 +49,12 @@ There are many connector options; for my SIEM, I am using Windows Security Event
 
 ![Branching](selecting our data connector.png)
 
+Next, we configure our data connector. On our configuration page, we have two options. The legacy option is discontinued so select Windows Security Events via AMA. 
+
+![Branching](connector 2.png)
+
+
+
 ## Header 2
 
 > This is a blockquote following a header.
