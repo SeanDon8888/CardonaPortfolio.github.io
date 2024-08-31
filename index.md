@@ -41,6 +41,14 @@ After creating the Log analytics, we click add to connect it in our workplace.
 
 ![Branching](adding sentital to our workspace.png)
 
+Now, we need a way to send our VM's data to Microsoft Sentinel. We accomplish this goal with a data connector. We can set one up by navigating our Sentinel page. 
+
+![Branching](sential data connector confiig.png)
+
+There are many connector options; for my SIEM, I am using Windows Security Events. 
+
+![Branching](selecting our data connector.png)
+
 ## Header 2
 
 > This is a blockquote following a header.
