@@ -45,17 +45,30 @@ Next, we configure our data connector. On our configuration page, we have two op
 
 ![Branching](connector 2.png)
 
+Now, that our connector is configured we can set it up properly by creating a collection rule. This will help use filter out our data.
 ![Branching](settingupconnector 1.png)
+
+We need to select our VM and our resource group and the rule will be created
 
 ![Branching](settingupconnector2.png)
 
+We can access our rule and see all of the data that is coming into our log analytics. 
+
 ![Branching](rulescreation1.png)
+
+In our query, we type in our code to only show what activity contains a successful connection via RDP. 
 
 ![Branching](rulecreation2.png)
 
+These are our settings. We are going to name our rule successful local sign ins. 
+
 ![Branching](rulecreation3.png)
 
+Our overview page should look like this. We see our rule created here and a default rule created by Azure.
+
 ![Branching](rulecreation4.png)
+
+Finally, I am going to use RDP to sign in remotely to the VM with another device. Here, we can see that our login triggered our rule and gave us a notification. 
 
 ![Branching](incident response successful.png)
 
