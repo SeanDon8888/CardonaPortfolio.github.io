@@ -45,7 +45,19 @@ Next, we configure our data connector. On our configuration page, we have two op
 
 ![Branching](connector 2.png)
 
+![Branching](settingupconnector 1.png)
 
+![Branching](settingupconnector2.png)
+
+![Branching](rulescreation1.png)
+
+![Branching](rulecreation2.png)
+
+![Branching](rulecreation3.png)
+
+![Branching](rulecreation4.png)
+
+![Branching](incident response successful.png)
 
 ## Header 2
 
