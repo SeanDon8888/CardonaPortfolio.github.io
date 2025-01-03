@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Creating a Security Information and Event Manager (SIEM)
+# Project 1: Creating a Security Information and Event Manager (SIEM)
 
 We are going to create our SIEM with Microsoft Azure
 
@@ -71,6 +71,10 @@ Our overview page should look like this. We see our rule created here and a defa
 Finally, I am going to use RDP to sign in remotely to the VM with another device. Here, we can see that our login triggered our rule and gave us a notification. 
 
 ![Branching](incident response successful.png)
+
+
+#Project 2: Creating and Configuring a Firewall
+
 
 ```js
 // Javascript code with syntax highlighting.
