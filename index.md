@@ -76,5 +76,5 @@ Finally, I am going to use RDP to sign in remotely to the VM with another device
 #Project 2: Creating and Configuring a Firewall
 
 <iframe width="1024" height="576"
-src="https://www.youtube.com/watch?v=Ryd_l0Yk22A">
+src="https://www.youtube.com/embed/Ryd_l0Yk22A?si=f_9hkh_n3rtSF6hz">
 </iframe>
