@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+# About Me
+I am a current student at Full Sail University. My goal is to hone my Cybersecurity skills and one day become a senior SOC Analyst. I love learning and doing new projects outside of school.
+
+#Contact Information
+Phone: 719-332-3889   Email: seancardona2@gmail.com  
+
+# Certifications: These are some certifications I grinded for: 
+
+ <iframe src="CompTIA Security+ ce certificate.pdf" width="100%" height="600px"></iframe>
 
 # Project 1: Creating a Security Information and Event Manager (SIEM)
 
