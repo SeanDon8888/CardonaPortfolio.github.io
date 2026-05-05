@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sean Cardona | Cybersecurity Portfolio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --border:  #30363d;
+      --accent:  #3fb950;
+      --accent2: #238636;
+      --text:    #e6edf3;
+      --muted:   #8b949e;
+      --red:     #f85149;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 2rem 60px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-family: monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+
+    .btn-primary {
+      background: var(--accent2);
+      border: 1px solid var(--accent);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    section h2 .section-icon {
+      color: var(--accent);
+      font-size: 1rem;
+      font-family: monospace;
+    }
+
+    /* ── About ── */
+    .about-text {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: rgba(63,185,80,0.1);
+      border: 1px solid rgba(63,185,80,0.35);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-family: monospace;
+    }
+
+    /* ── Certifications ── */
+    .cert-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .cert-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 580px;
+      border: none;
+    }
+
+    /* ── Projects ── */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-card .project-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-tag {
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3);
+      color: #79c0ff;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-family: monospace;
+    }
+
+    details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 500;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    details summary::before {
+      content: "▶";
+      font-size: 0.65rem;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::before { transform: rotate(90deg); }
+    details summary::-webkit-details-marker { display: none; }
+
+    .walkthrough {
+      margin-top: 1.4rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+    }
+
+    .step {
+      margin-bottom: 2rem;
+    }
+
+    .step h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: monospace;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .step img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: block;
+      margin: 0.6rem 0;
+    }
+
+    .embed-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .embed-wrapper iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    /* ── Contact / Footer ── */
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-line span {
+      color: var(--text);
+      font-family: monospace;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 50px 1rem 40px; }
+      section, footer { padding-left: 1rem; padding-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-brand">Sean Cardona</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">// cybersecurity portfolio</div>
+    <h1>Sean Cardona</h1>
+    <p>
+      Cybersecurity student at Full Sail University. Building hands-on experience
+      in threat detection, SIEM configuration, and incident response.
+      Working toward a career as a SOC Analyst.
+    </p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-secondary" href="https://github.com/seandon8888" target="_blank">GitHub</a>
+      <a class="btn btn-secondary" href="CompTIA Security+ ce certificate.pdf" target="_blank">CompTIA Cert</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2><span class="section-icon">$</span> About Me</h2>
+    <p class="about-text">
+      I'm a Full Sail University student passionate about cybersecurity and cloud security. I enjoy
+      building real-world labs outside of coursework — from deploying SIEMs in Azure to configuring
+      firewalls and writing security policies. My goal is to become a senior SOC Analyst and specialize
+      in threat detection and incident response.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2><span class="section-icon">$</span> Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-tag">Microsoft Azure</span>
+      <span class="skill-tag">Microsoft Sentinel</span>
+      <span class="skill-tag">Log Analytics</span>
+      <span class="skill-tag">SIEM</span>
+      <span class="skill-tag">Firewall Configuration</span>
+      <span class="skill-tag">Incident Response</span>
+      <span class="skill-tag">Windows Security Events</span>
+      <span class="skill-tag">RDP / Remote Access</span>
+      <span class="skill-tag">CompTIA Security+</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2><span class="section-icon">$</span> Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Building a SIEM with Microsoft Azure</h3>
+      <p class="project-desc">
+        Deployed a full Security Information and Event Management system using Microsoft Sentinel.
+        Configured a Windows 10 VM, set up log ingestion via a data connector, wrote KQL detection
+        rules, and triggered a live incident alert via RDP.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Azure</span>
+        <span class="project-tag">Microsoft Sentinel</span>
+        <span class="project-tag">Log Analytics</span>
+        <span class="project-tag">KQL</span>
+        <span class="project-tag">Incident Response</span>
+      </div>
+      <details>
+        <summary>View full walkthrough</summary>
+        <div class="walkthrough">
+
+          <div class="step">
+            <h4>Step 1 — Create the Virtual Machine</h4>
+            <p>Create a Windows 10 Pro VM and name the resource group. Naming a group here creates one automatically.</p>
+            <img src="VM creation.png" alt="VM creation" />
+            <p>The critical setting is allowing all RDP ports. A default username and test password are used for credentials.</p>
+            <img src="VM creation 2.png" alt="VM creation - RDP ports" />
+            <p>Click through to the networking page and confirm port 3389 is enabled.</p>
+            <img src="vm creation 4.png" alt="VM networking - port 3389" />
+            <p>Final review page before deploying the VM.</p>
+            <img src="VM creation final.png" alt="VM final review" />
+          </div>
+
+          <div class="step">
+            <h4>Step 2 — Set Up Microsoft Sentinel</h4>
+            <p>Search for Microsoft Sentinel, create a workspace, select the resource group, and name the Log Analytics workspace.</p>
+            <img src="creating log analytics .png" alt="Creating Log Analytics workspace" />
+            <p>Click <strong>Add</strong> to connect the workspace to Sentinel.</p>
+            <img src="adding sentital to our workspace.png" alt="Adding Sentinel to workspace" />
+            <p>Navigate to the Sentinel page and configure a data connector to stream VM events.</p>
+            <img src="sential data connector confiig.png" alt="Sentinel data connector config" />
+            <p>Select <strong>Windows Security Events</strong> as the connector type.</p>
+            <img src="selecting our data connector.png" alt="Selecting data connector" />
+            <p>Choose <strong>Windows Security Events via AMA</strong> — the legacy option is discontinued.</p>
+            <img src="connector 2.png" alt="Connector configuration" />
+            <p>Create a collection rule to filter incoming data and select the VM and resource group.</p>
+            <img src="settingupconnector 1.png" alt="Setting up connector rule" />
+            <img src="settingupconnector2.png" alt="Selecting VM for rule" />
+          </div>
+
+          <div class="step">
+            <h4>Step 3 — Write Detection Rules</h4>
+            <p>In the Log Analytics query editor, write a KQL query to surface only successful RDP connections.</p>
+            <img src="rulescreation1.png" alt="Rules creation overview" />
+            <img src="rulecreation2.png" alt="KQL query" />
+            <p>Name the rule <strong>Successful Local Sign-Ins</strong> and configure alert settings.</p>
+            <img src="rulecreation3.png" alt="Rule settings" />
+            <p>The overview page shows the new rule alongside a default Azure rule.</p>
+            <img src="rulecreation4.png" alt="Rules overview" />
+          </div>
+
+          <div class="step">
+            <h4>Step 4 — Trigger a Live Incident</h4>
+            <p>RDP into the VM from another device. The login triggers the detection rule and generates a Sentinel incident notification.</p>
+            <img src="incident response successful.png" alt="Incident response triggered" />
+          </div>
+
+        </div>
+      </details>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Creating and Configuring a Firewall</h3>
+      <p class="project-desc">
+        Hands-on walkthrough of firewall setup and rule configuration.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Firewall</span>
+        <span class="project-tag">Network Security</span>
+      </div>
+      <div class="embed-wrapper" style="margin-top:1rem;">
+        <iframe height="420" src="https://www.youtube.com/embed/Ryd_l0Yk22A?si=f_9hkh_n3rtSF6hz" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Password Standard Policy</h3>
+      <p class="project-desc">
+        A formal password standard document written as part of a security policy coursework project.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Security Policy</span>
+        <span class="project-tag">Documentation</span>
+      </div>
+      <div class="embed-wrapper" style="margin-top:1rem;">
+        <iframe src="Project IV password standard.pdf" height="600"></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p class="contact-line">Email: <span>seancardona2@gmail.com</span></p>
+    <p class="contact-line">GitHub: <span><a href="https://github.com/seandon8888">github.com/seandon8888</a></span></p>
+    <p class="footer-bottom">Sean Cardona &mdash; Cybersecurity Portfolio</p>
+  </footer>
+
+</body>
+</html>
