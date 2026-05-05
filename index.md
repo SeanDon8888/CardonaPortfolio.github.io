@@ -1,92 +1,118 @@
 ---
 layout: default
 ---
+
 # About Me
-I am a current student at Full Sail University. My goal is to hone my Cybersecurity skills and one day become a senior SOC Analyst. I love learning and doing new projects outside of school.
 
-#Contact Information
-Phone: 719-332-3889   Email: seancardona2@gmail.com  
+I am a cybersecurity student at Full Sail University working toward a career as a SOC Analyst. I enjoy hands-on projects, threat detection, and building practical security skills outside of coursework.
 
-# Certifications: These are some certifications I grinded for: 
+**Email:** seancardona2@gmail.com &nbsp;|&nbsp; **GitHub:** [github.com/seandon8888](https://github.com/seandon8888)
 
- <iframe src="CompTIA Security+ ce certificate.pdf" width="100%" height="600px"></iframe>
+---
 
-# Project 1: Creating a Security Information and Event Manager (SIEM)
+# Skills
 
-We are going to create our SIEM with Microsoft Azure
+<ul class="skills">
+  <li>Microsoft Azure</li>
+  <li>Microsoft Sentinel (SIEM)</li>
+  <li>Log Analytics</li>
+  <li>Firewall Configuration</li>
+  <li>Incident Response</li>
+  <li>Windows Security Events</li>
+  <li>RDP / Remote Access</li>
+  <li>CompTIA Security+</li>
+</ul>
 
-#Step 1 Creating our VM 
+---
 
-First, we want to create our Windows 10 pro Virtual Machine and name our resource group. (Naming a group now will create one automatically.) 
-![Branching](VM creation.png)
+# Certifications
 
-The most important part of our simulation is allowing all RDP ports. We are using a default username and random password for our credentials. 
+<iframe src="CompTIA Security+ ce certificate.pdf" width="100%" height="600px"></iframe>
 
-![Branching](VM creation 2.png)
+---
 
-Now, we just click through to allow Azure to create the default settings until we reach our networking page. Here, we ensure that we enable port 3389.  
+# Project 1: Building a SIEM with Microsoft Azure
 
-![Branching](vm creation 4.png)
+In this project I built a Security Information and Event Management (SIEM) system using Microsoft Azure and Microsoft Sentinel to detect and respond to real-time security events.
 
-This is what our final review page should look like.
+## Step 1: Creating the Virtual Machine
 
-![Branching](VM creation final.png)
+First, create a Windows 10 Pro Virtual Machine and name the resource group. (Naming a group now creates one automatically.)
 
-#Step 2 Setting up Microsoft Sentinel
+![VM creation](VM creation.png)
 
-In our search bar, we type in Mircosoft Sentinel and create our workspace. We click our resource group and name our Log Analytics workspace.
+The most important part of the simulation is allowing all RDP ports. A default username and random password are used for credentials.
 
-![Branching](creating log analytics .png)
+![VM creation 2](VM creation 2.png)
 
-After creating the Log analytics, we click add to connect it in our workplace.
+Click through the default Azure settings until reaching the networking page, then ensure port 3389 is enabled.
 
-![Branching](adding sentital to our workspace.png)
+![VM creation 4](vm creation 4.png)
 
-Now, we need a way to send our VM's data to Microsoft Sentinel. We accomplish this goal with a data connector. We can set one up by navigating our Sentinel page. 
+This is what the final review page should look like before deploying.
 
-![Branching](sential data connector confiig.png)
+![VM creation final](VM creation final.png)
 
-There are many connector options; for my SIEM, I am using Windows Security Events. 
+## Step 2: Setting Up Microsoft Sentinel
 
-![Branching](selecting our data connector.png)
+Search for Microsoft Sentinel and create a workspace. Select the resource group and name the Log Analytics workspace.
 
-Next, we configure our data connector. On our configuration page, we have two options. The legacy option is discontinued so select Windows Security Events via AMA. 
+![Creating log analytics](creating log analytics .png)
 
-![Branching](connector 2.png)
+After creating the Log Analytics workspace, click **Add** to connect it.
 
-Now, that our connector is configured we can set it up properly by creating a collection rule. This will help use filter out our data.
-![Branching](settingupconnector 1.png)
+![Adding Sentinel to workspace](adding sentital to our workspace.png)
 
-We need to select our VM and our resource group and the rule will be created
+To send VM data to Microsoft Sentinel, configure a data connector from the Sentinel page.
 
-![Branching](settingupconnector2.png)
+![Sentinel data connector config](sential data connector confiig.png)
 
-We can access our rule and see all of the data that is coming into our log analytics. 
+There are many connector options. For this SIEM, Windows Security Events is selected.
 
-![Branching](rulescreation1.png)
+![Selecting data connector](selecting our data connector.png)
 
-In our query, we type in our code to only show what activity contains a successful connection via RDP. 
+On the configuration page there are two options — the legacy option is discontinued, so select **Windows Security Events via AMA**.
 
-![Branching](rulecreation2.png)
+![Connector configuration](connector 2.png)
 
-These are our settings. We are going to name our rule successful local sign ins. 
+With the connector configured, create a collection rule to filter incoming data.
 
-![Branching](rulecreation3.png)
+![Setting up connector 1](settingupconnector 1.png)
 
-Our overview page should look like this. We see our rule created here and a default rule created by Azure.
+Select the VM and resource group, then the rule is created.
 
-![Branching](rulecreation4.png)
+![Setting up connector 2](settingupconnector2.png)
 
-Finally, I am going to use RDP to sign in remotely to the VM with another device. Here, we can see that our login triggered our rule and gave us a notification. 
+The rule can be accessed to see all data flowing into Log Analytics.
 
-![Branching](incident response successful.png)
+![Rules creation 1](rulescreation1.png)
 
+In the query editor, write a query to filter for successful RDP connections only.
 
-#Project 2: Creating and Configuring a Firewall
+![Rule creation 2](rulecreation2.png)
 
-<iframe width="1024" height="576"
+Name the rule **Successful Local Sign-Ins** and configure the alert settings.
+
+![Rule creation 3](rulecreation3.png)
+
+The overview page shows the new rule alongside a default Azure rule.
+
+![Rule creation 4](rulecreation4.png)
+
+Finally, RDP into the VM from another device. The login triggers the rule and generates an incident notification.
+
+![Incident response successful](incident response successful.png)
+
+---
+
+# Project 2: Creating and Configuring a Firewall
+
+<iframe width="100%" height="500"
 src="https://www.youtube.com/embed/Ryd_l0Yk22A?si=f_9hkh_n3rtSF6hz">
 </iframe>
 
-# School Project IV: Password standard
-<iframe src="Project IV password standard.pdf" width="100%" height="600px"></iframe> 
+---
+
+# School Project IV: Password Standard
+
+<iframe src="Project IV password standard.pdf" width="100%" height="600px"></iframe>
